@@ -15,11 +15,11 @@ include 'connect.php';
             <?php
 
                 $sql = 'SELECT * FROM Websites ORDER BY websiteID, domainName, username, password, blogtype, category, server';
-                $stmt = $conn->prepare($sql);
+                $stmt = $conn->prepare(query: $sql);
                 $stmt->execute();
 
                 // Alle rijen ophalen
-                $Websites = $stmt->get_result()->fetch_all(MYSQLI_ASSOC); // Gebruik fetch_all() voor mysqli
+                $Websites = $stmt->get_result()->fetch_all(mode: MYSQLI_ASSOC); // Gebruik fetch_all() voor mysqli
             ?>
 
             <table>
